@@ -1,8 +1,7 @@
 /*
  * File: Hangman.java
  * ------------------
- * This program will eventually play the Hangman game from
- * Assignment #4.
+ * This program will play a version of the Hangman game
  */
 
 
