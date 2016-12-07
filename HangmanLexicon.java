@@ -1,3 +1,4 @@
+
 /*
  * File: HangmanLexicon.java
  * -------------------------
@@ -14,48 +15,47 @@ public class HangmanLexicon {
 	/* Array of words, from HangmanLexicon.txt */
 	private ArrayList<String> arrayListOfWords = new ArrayList<String>();
 	private BufferedReader rd = null;
-	
-	/** reads in strings from HangmanLexicon.txt and adds them into ArrayList 
+
+	/**
+	 * reads in strings from HangmanLexicon.txt and adds them into ArrayList
 	 */
 
 	private BufferedReader openFile() {
-		while(rd == null) {
+		while (rd == null) {
 			try {
-				rd = new BufferedReader(new FileReader("HangmanLexicon.txt"));				
-			} catch(IOException ex) {
+				rd = new BufferedReader(new FileReader("HangmanLexicon.txt"));
+			} catch (IOException ex) {
 				throw new ErrorException(ex);
 			}
-		} return rd;
-		
+		}
+		return rd;
+
 	}
-	
-	
+
 	public HangmanLexicon() {
-	
+
 		rd = openFile();
 		try {
-			while(true) {
+			while (true) {
 				String line = rd.readLine();
-				if (line == null) break;
-				arrayListOfWords.add(line);	
-				}
+				if (line == null)
+					break;
+				arrayListOfWords.add(line);
+			}
 			rd.close();
-		} catch(IOException ex) {
+		} catch (IOException ex) {
 			throw new ErrorException(ex);
 		}
 	}
-	
-/** Returns the number of words in the lexicon. */
+
+	/** Returns the number of words in the lexicon. */
 	public int getWordCount() {
 		return arrayListOfWords.size();
 	}
 
-/** Returns the word at the specified index. */
+	/** Returns the word at the specified index. */
 	public String getWord(int index) {
-		return(arrayListOfWords.get(index));
+		return (arrayListOfWords.get(index));
 	};
-	
-	
-	
-	
+
 }
